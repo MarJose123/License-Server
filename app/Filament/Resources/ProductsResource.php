@@ -59,14 +59,14 @@ class ProductsResource extends Resource
                 Tables\Actions\RestoreBulkAction::make(),
             ]);
     }
-    
+
     public static function getRelations(): array
     {
         return [
             //
         ];
     }
-    
+
     public static function getPages(): array
     {
         return [
@@ -74,8 +74,8 @@ class ProductsResource extends Resource
             'create' => Pages\CreateProducts::route('/create'),
             'edit' => Pages\EditProducts::route('/{record}/edit'),
         ];
-    }    
-    
+    }
+
     public static function getEloquentQuery(): Builder
     {
         return parent::getEloquentQuery()
