@@ -36,7 +36,7 @@ Please review [our security policy](../../security/policy) on how to report secu
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+The Laravel framework is open-sourced software licensed under the [Apache License 2.0 ](https://opensource.org/license/apache-2-0/).
 
 ## Inspired by 
 
