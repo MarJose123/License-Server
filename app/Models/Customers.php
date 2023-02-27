@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Traits\ActionedBy;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -9,7 +10,7 @@ use Illuminate\Notifications\Notifiable;
 
 class Customers extends Model
 {
-    use Notifiable, SoftDeletes;
+    use Notifiable, SoftDeletes, ActionedBy;
 
     protected $fillable = [
         'first_name',

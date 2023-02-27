@@ -14,6 +14,10 @@ return new class extends Migration
             $table->text('description')->nullable();
             $table->float('price')->nullable()->default(0.00);
             $table->string('type')->nullable()->default('Application'); // possible value "Service", "Application", and "Device"
+            $table->foreignId('created_by');
+            $table->foreignId('updated_by');
+            $table->foreignId('deleted_by');
+            $table->foreignId('forced_deleted_by');
             $table->timestamps();
             $table->softDeletes();
         });
