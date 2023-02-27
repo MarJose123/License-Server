@@ -12,25 +12,42 @@ use Filament\Resources\Table;
 use Filament\Tables;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Illuminate\Support\Facades\Config;
 
 class ProductsResource extends Resource
 {
+
+
     protected static ?string $model = Products::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-collection';
 
+
     public static function form(Form $form): Form
     {
+
         return $form
             ->schema([
-                Forms\Components\TextInput::make('name')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\Textarea::make('description')
-                    ->maxLength(65535),
-                Forms\Components\TextInput::make('price'),
-                Forms\Components\TextInput::make('type')
-                    ->maxLength(255),
+                Forms\Components\Grid::make('1')->schema([
+                    Forms\Components\TextInput::make('name')
+                        ->required()
+                        ->maxLength(255),
+                    Forms\Components\Textarea::make('description')
+                        ->maxLength(65535),
+                    Forms\Components\TextInput::make('price')->mask(fn(Forms\Components\TextInput\Mask $mask) => $mask->patternBlocks([
+                        'money' => fn (Forms\Components\TextInput\Mask $mask) => $mask
+                        ->numeric()
+                        ->thousandsSeparator(',')
+                        ->decimalSeparator('.')
+                        ->decimalPlaces(2)
+                    ])->pattern('$money')),
+                    Forms\Components\Select::make('type')
+                        ->options([
+                            'Service' => 'Service',
+                            'Application' => 'Application',
+                            'Device' => 'Device',
+                        ]),
+                ])
             ]);
     }
 
