@@ -3,13 +3,14 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Notifications\Notifiable;
 use Lecturize\Addresses\Traits\HasAddresses;
 
 class Customers extends Model
 {
-    use Notifiable, HasAddresses, SoftDeletes;
+    use Notifiable, SoftDeletes;
 
     protected $fillable = [
         'first_name',
@@ -21,4 +22,9 @@ class Customers extends Model
         'company',
         'position',
     ];
+
+    public function company(): HasOne
+    {
+        return $this->hasOne(Companies::class, 'id', 'company');
+    }
 }
