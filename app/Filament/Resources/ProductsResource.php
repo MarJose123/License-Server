@@ -43,9 +43,7 @@ class ProductsResource extends Resource
                     ])->pattern('$money')),
                     Forms\Components\Select::make('type')
                         ->options([
-                            'Service' => 'Service',
                             'Application' => 'Application',
-                            'Device' => 'Device',
                         ]),
                 ])
             ]);
