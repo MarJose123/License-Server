@@ -8,6 +8,5 @@ class AddresseesSeeder extends Seeder
 {
     public function run(): void
     {
-
     }
 }

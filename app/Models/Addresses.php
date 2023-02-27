@@ -15,11 +15,11 @@ class Addresses extends Model
         'state',
         'post_code',
         'post_code',
-        'is_shipping'
+        'is_shipping',
 
     ];
 
     protected $casts = [
-      'deleted_at' => 'datetime'
+        'deleted_at' => 'datetime',
     ];
 }

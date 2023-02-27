@@ -14,6 +14,6 @@ class Companies extends Model
         'website',
         'industry',
         'employee_size',
-        'company_primary_contact'
+        'company_primary_contact',
     ];
 }

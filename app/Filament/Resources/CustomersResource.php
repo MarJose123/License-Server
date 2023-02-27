@@ -3,7 +3,6 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\CustomersResource\Pages;
-use App\Filament\Resources\CustomersResource\RelationManagers;
 use App\Models\Companies;
 use App\Models\Customers;
 use Filament\Forms;
@@ -45,7 +44,7 @@ class CustomersResource extends Resource
                         ->searchable(),
                     Forms\Components\TextInput::make('position')
                         ->maxLength(60),
-                ])
+                ]),
             ]);
     }
 

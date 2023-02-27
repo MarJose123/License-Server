@@ -8,6 +8,5 @@ class ProductsSeeder extends Seeder
 {
     public function run(): void
     {
-
     }
 }
