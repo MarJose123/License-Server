@@ -12,6 +12,7 @@ return new class extends Migration {
             $table->foreignId('product_id')->nullable();
             $table->foreignId('customer_id')->nullable();
             $table->string('domain', 200)->nullable()->unique();
+            $table->integer('user_limit')->nullable()->default(0);
             $table->uuid('license_key')->unique();
             $table->enum('status', ['active', 'inactive', 'suspended'])->default('active');
             $table->dateTime('expiration_date')->nullable();
