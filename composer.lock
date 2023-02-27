@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c3c7eeb8287990d65fa836af66d73645",
+    "content-hash": "83b152e501ba4ca578ee1cdb77cd2977",
     "packages": [
         {
             "name": "akaunting/laravel-money",
@@ -2471,6 +2471,77 @@
             },
             "abandoned": true,
             "time": "2018-11-22T07:55:51+00:00"
+        },
+        {
+            "name": "lecturize/laravel-addresses",
+            "version": "v1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Lecturize/Laravel-Addresses.git",
+                "reference": "5558b2c00f58fafa78c3aa1bf14d2efe0c35e426"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Lecturize/Laravel-Addresses/zipball/5558b2c00f58fafa78c3aa1bf14d2efe0c35e426",
+                "reference": "5558b2c00f58fafa78c3aa1bf14d2efe0c35e426",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "illuminate/database": "^9.0|^10.0",
+                "illuminate/support": "^9.0|^10.0",
+                "php": "^8.0",
+                "webpatser/laravel-countries": "^1.5",
+                "webpatser/laravel-uuid": "^3.0|^4.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.4",
+                "orchestra/testbench": "^7.0|^8.0",
+                "phpunit/phpunit": "^8.0|^9.0|^10.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Lecturize\\Addresses\\AddressesServiceProvider"
+                    ],
+                    "aliases": {
+                        "Address": "Lecturize\\Addresses\\Facades\\Address"
+                    }
+                },
+                "branch-alias": {
+                    "dev-master": "1.2.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Lecturize\\Addresses\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Alexander Manfred Poellmann",
+                    "homepage": "https://twitter.com/AMPoellmann",
+                    "role": "developer"
+                }
+            ],
+            "description": "Simple address and contact management for Laravel.",
+            "homepage": "https://github.com/Lecturize/Laravel-Addresses",
+            "keywords": [
+                "addresses",
+                "contacts",
+                "laravel",
+                "lecturize"
+            ],
+            "support": {
+                "issues": "https://github.com/Lecturize/Laravel-Addresses/issues",
+                "source": "https://github.com/Lecturize/Laravel-Addresses"
+            },
+            "time": "2023-02-21T16:39:43+00:00"
         },
         {
             "name": "livewire/livewire",
@@ -6646,6 +6717,120 @@
                 "source": "https://github.com/webmozarts/assert/tree/1.11.0"
             },
             "time": "2022-06-03T18:03:27+00:00"
+        },
+        {
+            "name": "webpatser/laravel-countries",
+            "version": "1.5.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/webpatser/laravel-countries.git",
+                "reference": "000d7aaa67a1eb488275feafe6ab74a6b7544e84"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/webpatser/laravel-countries/zipball/000d7aaa67a1eb488275feafe6ab74a6b7544e84",
+                "reference": "000d7aaa67a1eb488275feafe6ab74a6b7544e84",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Webpatser\\Countries": "src/"
+                },
+                "classmap": [
+                    "src/commands"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Christoph Kempen",
+                    "email": "christoph@downsized.nl",
+                    "homepage": "http://downsized.nl/",
+                    "role": "developer"
+                },
+                {
+                    "name": "Paul Kievits",
+                    "role": "developer"
+                }
+            ],
+            "description": "Laravel Countries is a bundle for Laravel, providing Almost ISO 3166_2, 3166_3, currency, Capital and more for all countries.",
+            "homepage": "https://github.com/webpatser/laravel-countries",
+            "keywords": [
+                "countries",
+                "iso_3166_2",
+                "iso_3166_3",
+                "laravel"
+            ],
+            "support": {
+                "issues": "https://github.com/webpatser/laravel-countries/issues",
+                "source": "https://github.com/webpatser/laravel-countries"
+            },
+            "time": "2018-05-16T06:37:24+00:00"
+        },
+        {
+            "name": "webpatser/laravel-uuid",
+            "version": "4.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/webpatser/laravel-uuid.git",
+                "reference": "df92ebbc5ea71ee9e0d6e2861178be42ef7eb330"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/webpatser/laravel-uuid/zipball/df92ebbc5ea71ee9e0d6e2861178be42ef7eb330",
+                "reference": "df92ebbc5ea71ee9e0d6e2861178be42ef7eb330",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.0|^8.0"
+            },
+            "require-dev": {
+                "fakerphp/faker": "^1.9.1",
+                "phpunit/phpunit": "^9.3.3"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Webpatser\\Uuid\\UuidServiceProvider"
+                    ],
+                    "aliases": {
+                        "Uuid": "Webpatser\\Uuid\\Uuid"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Webpatser\\Uuid\\": "src/Webpatser/Uuid/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Christoph Kempen",
+                    "email": "christoph@downsized.nl"
+                }
+            ],
+            "description": "Laravel package to generate and to validate a universally unique identifier (UUID) according to the RFC 4122 standard. Support for version 1, 3, 4 and 5 UUIDs are built-in.",
+            "homepage": "https://github.com/webpatser/laravel-uuid",
+            "keywords": [
+                "UUID RFC4122"
+            ],
+            "support": {
+                "issues": "https://github.com/webpatser/laravel-uuid/issues",
+                "source": "https://github.com/webpatser/laravel-uuid"
+            },
+            "time": "2021-03-09T07:19:24+00:00"
         }
     ],
     "packages-dev": [
