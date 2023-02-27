@@ -40,11 +40,9 @@ class CustomersResource extends Resource
                         ->maxLength(32),
                     Forms\Components\TextInput::make('mobile')
                         ->maxLength(255),
-                    Forms\Components\Fieldset::make('Company')
-                        ->relationship('company')
-                        ->schema([
-                            Forms\Components\TextInput::make('name'),
-                        ]),
+                    Forms\Components\Select::make('Company')
+                        ->options(Companies::all()->pluck('name', 'id'))
+                        ->searchable(),
                     Forms\Components\TextInput::make('position')
                         ->maxLength(60),
                 ])
