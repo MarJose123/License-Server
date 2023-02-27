@@ -8,6 +8,5 @@ class LicensesSeeder extends Seeder
 {
     public function run(): void
     {
-
     }
 }

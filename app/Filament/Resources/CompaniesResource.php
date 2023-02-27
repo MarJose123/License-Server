@@ -3,7 +3,6 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\CompaniesResource\Pages;
-use App\Filament\Resources\CompaniesResource\RelationManagers;
 use App\Models\Companies;
 use App\Models\Customers;
 use Filament\Forms;
@@ -33,7 +32,7 @@ class CompaniesResource extends Resource
                 Forms\Components\TextInput::make('industry')
                     ->maxLength(255),
                 Forms\Components\Select::make('company_primary_contact')
-                    ->options(function (?Model $record){
+                    ->options(function (?Model $record) {
                         return Customers::all()->where('company', '=', $record->id);
                     })
                     ->visibleOn('edit'),
@@ -49,7 +48,7 @@ class CompaniesResource extends Resource
                         Forms\Components\TextInput::make('billing_post_code'),
                         Forms\Components\TextInput::make('shipping_post_code'),
                     ])
-                    ->columns(2)
+                    ->columns(2),
             ]);
     }
 

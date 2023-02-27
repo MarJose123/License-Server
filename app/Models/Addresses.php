@@ -15,7 +15,7 @@ class Addresses extends Model
         'state',
         'post_code',
         'is_shipping',
-        'is_billing'
+        'is_billing',
     ];
 
     protected $casts = [
