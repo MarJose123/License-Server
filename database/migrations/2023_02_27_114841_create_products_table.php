@@ -13,8 +13,8 @@ return new class extends Migration {
             $table->text('description')->nullable();
             $table->float('price')->nullable()->default(0.00);
             $table->string('type')->nullable()->default('Application'); // possible value "Service", "Application", and "Device"
-
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
