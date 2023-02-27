@@ -38,6 +38,18 @@ class CompaniesResource extends Resource
                     })
                     ->visibleOn('edit'),
                 Forms\Components\TextInput::make('employee_size'),
+                Forms\Components\Section::make('Address Information')
+                    ->schema([
+                        Forms\Components\Placeholder::make('billing_street'),
+                        Forms\Components\Placeholder::make('shipping_street'),
+                        Forms\Components\Placeholder::make('billing_city'),
+                        Forms\Components\Placeholder::make('shipping_city'),
+                        Forms\Components\Placeholder::make('billing_state'),
+                        Forms\Components\Placeholder::make('shipping_state'),
+                        Forms\Components\Placeholder::make('billing_post_code'),
+                        Forms\Components\Placeholder::make('shipping_post_code'),
+                    ])
+                    ->columns(2)
             ]);
     }
 
