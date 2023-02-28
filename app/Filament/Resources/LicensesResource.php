@@ -39,14 +39,14 @@ class LicensesResource extends Resource
                     ]),
                     Forms\Components\Checkbox::make('is_trial')->reactive(),
                     Forms\Components\Checkbox::make('is_lifetime')->reactive(),
-                    Forms\Components\DateTimePicker::make('expiration_date')->required(function (\Closure $get){
+                    Forms\Components\DatePicker::make('expiration_date')->required(function (\Closure $get){
                         if($get('is_trial') !== null)
                         {
                             return true;
                         }
                         return  false;
                     })->visible(function (\Closure $get){
-                        if($get('is_lifetime') !== null)
+                        if($get('is_trial') !== null)
                         {
                             return true;
                         }
