@@ -23,6 +23,11 @@ class Customers extends Model
         'position',
     ];
 
+    public function getFullNameAttribute()
+    {
+        return $this->last_name.', '.$this->first_name;
+    }
+
     public function company(): HasOne
     {
         return $this->hasOne(Companies::class, 'id', 'company');
