@@ -16,7 +16,7 @@ return new class extends Migration
             $table->integer('user_limit')->nullable()->default(0);
             $table->uuid('license_key')->unique();
             $table->string('device_uuid')->unique();
-            $table->enum('status', ['active', 'inactive', 'suspended'])->default('active');
+            $table->enum('status', ['active', 'inactive', 'suspended', 'expired'])->default('active');
             $table->dateTime('expiration_date')->nullable();
             $table->boolean('is_trial')->default(false);
             $table->boolean('is_lifetime')->default(false);
