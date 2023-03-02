@@ -18,10 +18,10 @@ return new class extends Migration
             $table->string('mobile')->nullable();
             $table->foreignId('company')->nullable();
             $table->string('position', 60)->nullable();
-            $table->foreignId('created_by');
-            $table->foreignId('updated_by');
-            $table->foreignId('deleted_by');
-            $table->foreignId('forced_deleted_by');
+            $table->foreignId('created_by')->nullable();
+            $table->foreignId('updated_by')->nullable();
+            $table->foreignId('deleted_by')->nullable();
+            $table->foreignId('forced_deleted_by')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

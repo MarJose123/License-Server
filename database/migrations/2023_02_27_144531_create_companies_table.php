@@ -15,10 +15,10 @@ return new class extends Migration
             $table->string('industry')->nullable();
             $table->foreignId('company_primary_contact')->nullable();
             $table->integer('employee_size')->nullable();
-            $table->foreignId('created_by');
-            $table->foreignId('updated_by');
-            $table->foreignId('deleted_by');
-            $table->foreignId('forced_deleted_by');
+            $table->foreignId('created_by')->nullable();
+            $table->foreignId('updated_by')->nullable();
+            $table->foreignId('deleted_by')->nullable();
+            $table->foreignId('forced_deleted_by')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
