@@ -12,6 +12,7 @@ class LicenseKeyGenerator
     public function __construct()
     {
         $this->pattern = config('license-server.License_key.pattern');
+        $this->existing_keys = array();
 
     }
 
