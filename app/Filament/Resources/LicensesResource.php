@@ -37,16 +37,18 @@ class LicensesResource extends Resource
                         'suspended' => "Suspended",
                         'expired' => "Expired",
                     ]),
-                    Forms\Components\Checkbox::make('is_trial')->reactive(),
-                    Forms\Components\Checkbox::make('is_lifetime')->reactive(),
+                    Forms\Components\Checkbox::make('is_trial')->reactive()
+                        ->disabled(fn(\Closure $get): bool =>  $get('is_lifetime') === true ?? false),
+                    Forms\Components\Checkbox::make('is_lifetime')->reactive()
+                    ->disabled(fn(\Closure $get): bool =>  $get('is_trial') === true ?? false),
                     Forms\Components\DatePicker::make('expiration_date')->required(function (\Closure $get){
-                        if($get('is_trial') !== null)
+                        if($get('is_trial') === true)
                         {
                             return true;
                         }
                         return  false;
                     })->visible(function (\Closure $get){
-                        if($get('is_trial') !== null)
+                        if($get('is_trial') === true)
                         {
                             return true;
                         }
