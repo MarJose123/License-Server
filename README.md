@@ -7,6 +7,8 @@
 
 Working In Progress :construction:
 
+:construction_worker_man: Web GUI
+
 :construction_worker_man: API
 
 :construction_worker_man: Documentation
