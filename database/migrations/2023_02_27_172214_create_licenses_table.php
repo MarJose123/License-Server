@@ -18,8 +18,8 @@ return new class extends Migration
             $table->string('device_uuid')->unique()->nullable();
             $table->enum('status', ['active', 'inactive', 'suspended', 'expired'])->default('active');
             $table->dateTime('expiration_date')->nullable();
-            $table->boolean('is_trial')->default(false);
-            $table->boolean('is_lifetime')->default(false);
+            $table->boolean('is_trial')->default(false)->nullable();
+            $table->boolean('is_lifetime')->default(false)->nullable();
             $table->foreignId('created_by')->nullable();
             $table->foreignId('updated_by')->nullable();
             $table->foreignId('deleted_by')->nullable();
