@@ -17,8 +17,6 @@ class CreateLicenses extends CreateRecord
     protected function mutateFormDataBeforeCreate(array $data): array
     {
         $data['license_key'] = (new LicenseKeyGenerator())->generateUnique();
-        $data['status'] = "active";
-
         return $data;
     }
 

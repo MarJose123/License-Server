@@ -40,7 +40,7 @@ class LicensesResource extends Resource
                         'inactive' => "In-Active",
                         'suspended' => "Suspended",
                         'expired' => "Expired",
-                    ]),
+                    ])->required(),
                     Forms\Components\Checkbox::make('is_trial')->reactive()
                         ->disabled(fn(\Closure $get): bool =>  $get('is_lifetime') === true ?? false),
                     Forms\Components\Checkbox::make('is_lifetime')->reactive()
