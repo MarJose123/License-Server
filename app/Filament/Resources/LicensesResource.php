@@ -41,19 +41,9 @@ class LicensesResource extends Resource
                         ->disabled(fn(\Closure $get): bool =>  $get('is_lifetime') === true ?? false),
                     Forms\Components\Checkbox::make('is_lifetime')->reactive()
                     ->disabled(fn(\Closure $get): bool =>  $get('is_trial') === true ?? false),
-                    Forms\Components\DatePicker::make('expiration_date')->required(function (\Closure $get){
-                        if($get('is_trial') === true)
-                        {
-                            return true;
-                        }
-                        return  false;
-                    })->visible(function (\Closure $get){
-                        if($get('is_trial') === true)
-                        {
-                            return true;
-                        }
-                        return  false;
-                    }),
+                    Forms\Components\DatePicker::make('expiration_date')
+                        ->required(fn (\Closure $get): bool => $get('is_trial') === true ?? false)
+                        ->visible(fn (\Closure $get): bool => $get('is_trial') === true ?? false),
                     Forms\Components\TextInput::make('device_uuid'),
                 ]),
 
