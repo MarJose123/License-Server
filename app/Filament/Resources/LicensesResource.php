@@ -29,9 +29,11 @@ class LicensesResource extends Resource
                     Forms\Components\TextInput::make('license_key')->visibleon('view'),
                     Forms\Components\Select::make('customer_id')
                         ->label('Customer')
+                        ->required()
                         ->options(Customers::all()->pluck('full_name', 'id')),
                     Forms\Components\Select::make('product_id')
                         ->label('Product')
+                        ->required()
                         ->options(Products::all()->pluck('name', 'id')),
                     Forms\Components\TextInput::make('user_limit')->numeric(),
                     Forms\Components\TextInput::make('domain')->url()->unique(),
