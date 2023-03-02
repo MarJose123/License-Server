@@ -64,8 +64,8 @@ class LicensesResource extends Resource
                 Tables\Columns\TextColumn::make('user_limit'),
                 Tables\Columns\TextColumn::make('domain'),
                 Tables\Columns\TextColumn::make('status'),
-                Tables\Columns\CheckboxColumn::make('is_trial'),
-                Tables\Columns\CheckboxColumn::make('is_lifetime'),
+                Tables\Columns\BooleanColumn::make('is_trial'),
+                Tables\Columns\BooleanColumn::make('is_lifetime'),
                 Tables\Columns\TextColumn::make('expiration_date'),
                 Tables\Columns\TextColumn::make('device_uuid'),
             ])
